@@ -63,11 +63,21 @@ Manages authentication and authorization for the services, providing security.
 **Monitoring & Visualization:**
 
 Spring Boot Actuator: Provides production-ready features for monitoring and managing Spring Boot applications.
+
 Prometheus: Collects metrics from the services.
+
 Grafana: Visualizes the metrics collected by Prometheus.
 
 **Distributed Tracing & Log Aggregation:**
+
 Spring Sleuth: Adds trace and span IDs to logs to track the flow of requests.
+
 Zipkin: Collects and visualizes distributed tracing data.
+
 Logback: Used for logging.
+
 Logstash and Kibana: Logstash aggregates logs, and Kibana visualizes them.
+
+**To start the application:**
+
+1. Run the Kafka cluster: docker-compose -f common.yml -f kafka_cluster.yml up
