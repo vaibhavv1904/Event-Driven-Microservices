@@ -1,6 +1,7 @@
 package com.yb.microservice;
 
 import com.yb.microservice.config.TwitterToKafkaServiceConfigData;
+import com.yb.microservice.init.StreamInitializer;
 import com.yb.microservice.runner.StreamRunner;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,14 +18,13 @@ public class TwitterToKafkaServiceApplication implements CommandLineRunner {
 
     private static final Logger LOG = LoggerFactory.getLogger(TwitterToKafkaServiceApplication.class);
 
-    private final TwitterToKafkaServiceConfigData twitterToKafkaServiceConfigData;
 
     private final StreamRunner streamRunner;
+    private final StreamInitializer streamInitializer;
 
-    public TwitterToKafkaServiceApplication(TwitterToKafkaServiceConfigData configData,
-                                            StreamRunner runner) {
-        this.twitterToKafkaServiceConfigData = configData;
+    public TwitterToKafkaServiceApplication(StreamRunner runner, StreamInitializer streamInitializer) {
         this.streamRunner = runner;
+        this.streamInitializer = streamInitializer;
     }
 
     public static void main(String[] args) {
@@ -34,8 +34,7 @@ public class TwitterToKafkaServiceApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         LOG.info("App starts....");
-        LOG.info(Arrays.toString(twitterToKafkaServiceConfigData.getTwitterKeywords().toArray(new String[] {})));
-        LOG.info(twitterToKafkaServiceConfigData.getWelcomeMessage());
+        streamInitializer.init();
         streamRunner.start();
     }
 }

@@ -35,13 +35,25 @@
         </dependency>
 
         <dependency>
-            <groupId>org.twitter4j</groupId>
-            <artifactId>twitter4j-stream</artifactId>
+            <groupId>com.yb.microservice</groupId>
+            <artifactId>app-config-data</artifactId>
         </dependency>
 
         <dependency>
+            <groupId>org.twitter4j</groupId>
+            <artifactId>twitter4j-stream</artifactId>
+        </dependency>
+        <dependency>
             <groupId>com.yb.microservice</groupId>
-            <artifactId>app-config-data</artifactId>
+            <artifactId>kafka-model</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.yb.microservice</groupId>
+            <artifactId>kafka-producer</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.yb.microservice</groupId>
+            <artifactId>kafka-admin</artifactId>
         </dependency>
 
     </dependencies>
