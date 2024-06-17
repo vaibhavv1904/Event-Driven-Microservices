@@ -15,8 +15,6 @@ spring:
         git:
           uri: https://github.com/vaibhavv1904/Config-server-repository
           default-label: master
-          username: vaibhavv1904
-          password: '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'
           clone-on-start: true
     fail-fast: true
   security:
