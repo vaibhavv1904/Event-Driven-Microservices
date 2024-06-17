@@ -80,6 +80,6 @@ Logstash and Kibana: Logstash aggregates logs, and Kibana visualizes them.
 
 **To start the application:**
 
-1. docker-compose -f common.yml -f kafka_cluster.yml up -> to start the kafka cluster
-2. docker run -it --network=host confluentinc/cp-kafkacat kafkacat -L -b localhost:19092 -> to check the status of brokers
+1. docker-compose -f common.yml -f kafka_cluster.yml up or docker-compose-up -> to start the kafka cluster
+2. docker run -it --network=host confluentinc/cp-kafkacat kafkacat -L -b localhost:19092 -> to check the status of brokers or download Kafka tool (offset explorer)
 3. docker run --rm --network=host confluentinc/cp-kafka:7.0.0 kafka-console-consumer --bootstrap-server localhost:39092 --topic twitter-topic --from-beginning -> to create a consumer and testing the producer
